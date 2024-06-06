@@ -19,28 +19,128 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Color(0xfffafafa),
         appBar: myCustomAppBar(),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        body: ListView(
+          padding: const EdgeInsets.all(20),
           children: [
-            Image.asset(
-              'assets/images/logo.png',
-              height: 80,
+            TaskCard(
+              barColor: Colors.red,
+              title: 'Flutter App Development',
+              category: 'Development',
+              time: '8:00',
+              participantsImages: [
+                'assets/images/dummy_image_1.png',
+                'assets/images/dummy_image_2.png',
+                'assets/images/dummy_image_3.png',
+                'assets/images/dummy_image_4.png',
+              ],
             ),
-            simpleAppBar(
-              title: 'Facebook',
-              leadingIcon: Icons.close,
+            TaskCard(
+              barColor: kSecondaryColor,
+              title: 'Figma Crash Course',
+              category: 'Design',
+              time: '9:00',
+              participantsImages: [
+                'assets/images/dummy_image_4.png',
+                'assets/images/dummy_image_3.png',
+                'assets/images/dummy_image_1.png',
+                'assets/images/dummy_image_2.png',
+              ],
             ),
-            simpleAppBar(
-              title: 'Google',
-              leadingIcon: Icons.arrow_back,
-              actionIcon: Icons.search,
+            TaskCard(
+              barColor: Colors.red,
+              title: 'Flutter App Development',
+              category: 'Development',
+              time: '8:00',
+              participantsImages: [
+                'assets/images/dummy_image_1.png',
+                'assets/images/dummy_image_2.png',
+                'assets/images/dummy_image_3.png',
+                'assets/images/dummy_image_4.png',
+              ],
             ),
-            simpleAppBar(
-              title: 'Apple',
+            TaskCard(
+              barColor: kSecondaryColor,
+              title: 'Figma Crash Course',
+              category: 'Design',
+              time: '9:00',
+              participantsImages: [
+                'assets/images/dummy_image_4.png',
+                'assets/images/dummy_image_3.png',
+                'assets/images/dummy_image_1.png',
+                'assets/images/dummy_image_2.png',
+              ],
             ),
-            SizedBox(
-              height: 20,
+            TaskCard(
+              barColor: Colors.red,
+              title: 'Flutter App Development',
+              category: 'Development',
+              time: '8:00',
+              participantsImages: [
+                'assets/images/dummy_image_1.png',
+                'assets/images/dummy_image_2.png',
+                'assets/images/dummy_image_3.png',
+                'assets/images/dummy_image_4.png',
+              ],
+            ),
+            TaskCard(
+              barColor: kSecondaryColor,
+              title: 'Figma Crash Course',
+              category: 'Design',
+              time: '9:00',
+              participantsImages: [
+                'assets/images/dummy_image_4.png',
+                'assets/images/dummy_image_3.png',
+                'assets/images/dummy_image_1.png',
+                'assets/images/dummy_image_2.png',
+              ],
+            ),
+            TaskCard(
+              barColor: Colors.red,
+              title: 'Flutter App Development',
+              category: 'Development',
+              time: '8:00',
+              participantsImages: [
+                'assets/images/dummy_image_1.png',
+                'assets/images/dummy_image_2.png',
+                'assets/images/dummy_image_3.png',
+                'assets/images/dummy_image_4.png',
+              ],
+            ),
+            TaskCard(
+              barColor: kSecondaryColor,
+              title: 'Figma Crash Course',
+              category: 'Design',
+              time: '9:00',
+              participantsImages: [
+                'assets/images/dummy_image_4.png',
+                'assets/images/dummy_image_3.png',
+                'assets/images/dummy_image_1.png',
+                'assets/images/dummy_image_2.png',
+              ],
+            ),
+            TaskCard(
+              barColor: Colors.red,
+              title: 'Flutter App Development',
+              category: 'Development',
+              time: '8:00',
+              participantsImages: [
+                'assets/images/dummy_image_1.png',
+                'assets/images/dummy_image_2.png',
+                'assets/images/dummy_image_3.png',
+                'assets/images/dummy_image_4.png',
+              ],
+            ),
+            TaskCard(
+              barColor: kSecondaryColor,
+              title: 'Figma Crash Course',
+              category: 'Design',
+              time: '9:00',
+              participantsImages: [
+                'assets/images/dummy_image_4.png',
+                'assets/images/dummy_image_3.png',
+                'assets/images/dummy_image_1.png',
+                'assets/images/dummy_image_2.png',
+              ],
             ),
           ],
         ),
@@ -74,37 +174,132 @@ class MyApp extends StatelessWidget {
       ],
     );
   }
+}
 
-  Container simpleAppBar({
-    String title = '',
-    IconData? leadingIcon,
-    IconData? actionIcon,
-  }) {
+class TaskCard extends StatelessWidget {
+  TaskCard({
+    this.barColor,
+    this.title,
+    this.category,
+    this.time,
+    this.participantsImages,
+  });
+
+  Color? barColor;
+  String? title;
+  String? category;
+  String? time;
+  List<String>? participantsImages;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 12),
-      padding: EdgeInsets.symmetric(
-        horizontal: 20,
-      ),
-      height: 56,
-      color: Colors.blue,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Icon(
-            leadingIcon,
-            color: kTertiaryColor,
+      margin: EdgeInsets.only(bottom: 16),
+      padding: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: kTertiaryColor,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, 20),
+            blurRadius: 30,
+            spreadRadius: -18,
+            color: kPrimaryColor.withOpacity(0.1),
           ),
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-              color: kTertiaryColor,
+        ],
+      ),
+      child: Row(
+        children: [
+          Container(
+            height: 84,
+            width: 4,
+            decoration: BoxDecoration(
+              color: barColor,
+              borderRadius: BorderRadius.circular(50),
             ),
           ),
-          Icon(
-            actionIcon,
-            color: kTertiaryColor,
+          SizedBox(
+            width: 16,
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(
+                  height: 4,
+                ),
+                Text(
+                  title!,
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(
+                  height: 4,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      '$category',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Color(0xff637085),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Image.asset(
+                      'assets/images/clock.png',
+                      height: 16,
+                    ),
+                    SizedBox(
+                      width: 6,
+                    ),
+                    Text(
+                      '$time',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Color(0xff637085),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 13,
+                ),
+                Row(
+                  children: [
+                    Image.asset(
+                      participantsImages![0],
+                      height: 30,
+                    ),
+                    SizedBox(
+                      width: 4,
+                    ),
+                    Image.asset(
+                      participantsImages![1],
+                      height: 30,
+                    ),
+                    SizedBox(
+                      width: 4,
+                    ),
+                    Image.asset(
+                      participantsImages![2],
+                      height: 30,
+                    ),
+                    SizedBox(
+                      width: 4,
+                    ),
+                    Image.asset(
+                      participantsImages![3],
+                      height: 30,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
