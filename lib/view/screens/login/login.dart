@@ -17,25 +17,27 @@ class Login extends StatelessWidget {
               height: 37,
             ),
 
-            Row(
-              children: [
-                Expanded(
-                  child: MyTextField(
-                    label: 'Expiry',
-                    hint: '12/12/2002',
-                  ),
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                Expanded(
-                  child: MyTextField(
-                    label: 'CVV',
-                    hint: '***',
-                  ),
-                ),
-              ],
-            ),
+            // Textfield are commented.
+
+            // Row(
+            //   children: [
+            //     Expanded(
+            //       child: MyTextField(
+            //         label: 'Expiry',
+            //         hint: '12/12/2002',
+            //       ),
+            //     ),
+            //     SizedBox(
+            //       width: 12,
+            //     ),
+            //     Expanded(
+            //       child: MyTextField(
+            //         label: 'CVV',
+            //         hint: '***',
+            //       ),
+            //     ),
+            //   ],
+            // ),
 
             // SizedBox(
             //   height: 16,
