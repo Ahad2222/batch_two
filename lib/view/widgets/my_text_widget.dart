@@ -1,5 +1,5 @@
+import 'package:batch_two/constants/app_fonts.dart';
 import 'package:flutter/material.dart';
-
 
 // ignore: must_be_immutable
 class MyText extends StatelessWidget {
@@ -62,7 +62,7 @@ class MyText extends StatelessWidget {
             color: color,
             fontWeight: weight,
             decoration: decoration,
-            fontFamily: fontFamily,
+            fontFamily: fontFamily ?? AppFonts.URBANIST,
             height: lineHeight,
             fontStyle: fontStyle,
             letterSpacing: letterSpacing,
